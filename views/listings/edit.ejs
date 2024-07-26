@@ -1,0 +1,84 @@
+<% layout("/layouts/boilerplate") -%>
+<link rel="stylesheet" href="/css/edit.css">
+<div class="container mt-3">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h2 class="text-center mb-4">Edit Listing</h2>
+            <form action="/listings/<%= listing._id %>?_method=PUT" method="POST" class="needs-validation" novalidate enctype="multipart/form-data">
+
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" class="form-control" name="listing[title]" value="<%= listing.title %>" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please enter the title
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea required class="form-control" name="listing[description]"><%= listing.description %></textarea>
+                    <div class="invalid-feedback">
+                        Please enter a short description
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <h6>Preview Original image</h6>
+                    <img style="border-radius: 16px;max-width: 18rem;max-height: 200px;cursor: pointer;" src="<%= previewImageUrl %>"   alt="preview">
+                </div>
+
+                <div class="mb-3">
+                    <label for="image" class="form-label">Update image</label>
+                    <input type="file" class="form-control" name="listing[image]" >
+                </div>
+
+                <div class="row">
+                    <div class="mb-3 col-md-6">
+                        <label for="price" class="form-label">Price</label>
+                        <input type="number" class="form-control" name="listing[price]" value="<%= listing.price %>" required>
+                        <div class="invalid-feedback">
+                            Please enter a valid price
+                        </div>
+                    </div>
+
+                    <div class="mb-3 col-md-6">
+                        <label for="country" class="form-label">Country</label>
+                        <input type="text" name="listing[country]" class="form-control" value="<%= listing.country %>" required>
+                        <div class="invalid-feedback">
+                            Please enter the country name
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location</label>
+                    <input type="text" class="form-control" name="listing[location]" value="<%= listing.location %>" required>
+                    <div class="invalid-feedback">
+                        Please enter the location
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <select class="form-select" aria-label="Default select example" name="listing[category]">
+                        <option selected>Select Category</option>
+                        <option value="trending">Trending</option>
+                        <option value="rooms">Rooms</option>
+                        <option value="iconic-cities">Iconic Cities</option>
+                        <option value="mountains">Mountains</option>
+                        <option value="castles">Castles</option>
+                        <option value="amazing-pools">Amazing Pools</option>
+                        <option value="camping">Camping</option>
+                        <option value="farms">Farms</option>
+                        <option value="arctic">Arctic</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-danger mb-2">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+

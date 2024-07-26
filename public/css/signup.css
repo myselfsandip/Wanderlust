@@ -1,0 +1,224 @@
+body {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    flex: 1;
+}
+
+.navbar {
+    height: 5rem;
+    background-color: white;
+}
+
+.nav-link {
+    color: #222222;
+    background-color: white;
+}
+
+.fa-compass {
+    font-size: 2rem;
+    color: #ff3e61;
+}
+
+footer {
+    height: 8rem;
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.f-info-links {
+    text-align: center;
+}
+
+.f-info-links a {
+    text-decoration: none;
+    color: #222222;
+}
+
+.f-info-links a:hover {
+    text-decoration: underline;
+}
+
+.f-info {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 7px;
+}
+
+.f-info-socials {
+    margin-top: 7px;
+}
+
+.f-info-socials i {
+    font-size: 1.4rem;
+    margin-right: 1rem;
+}
+
+.fa-instagram {
+    background-image: linear-gradient(to right, #f9ce34 0%, #ee2a7b 50%, #6228d7 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.fa-linkedin {
+    background-image: linear-gradient(to right, #0077B5, #0077B5);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.card {
+    border: none;
+    margin-bottom: 2rem;
+}
+
+.card-img-top {
+    border-radius: 1rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 0;
+}
+
+.card-body p {
+    margin: 0;
+}
+
+.review-card {
+    border: 1px solid #e3e3e3;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.review-card:hover {
+    transform: scale(1.02);
+}
+
+.review-card .card-body {
+    padding: 20px;
+}
+
+.review-card .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.review-card .card-text {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.review-card .card-rating {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #f39c12;
+}
+
+.show-img {
+    height: 30vh;
+    object-fit: cover;
+}
+
+.show-bottom {
+    display: flex;
+    gap: 1rem;
+}
+
+textarea {
+    resize: none;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        height: auto;
+        padding: 1rem;
+    }
+
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .show-card {
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .card-img-top {
+        height: auto;
+    }
+
+    .card img {
+        height: auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .submit-button{
+        width: 100%;
+    }
+    .navbar {
+        border-bottom: none !important;
+    }
+
+    .row {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .index-card {
+        margin: 0 auto;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .listing-card {
+        width: 100% !important;
+    }
+
+    .card img {
+        height: auto !important;
+        width: 100%;
+    }
+
+    .show-card {
+        width: 100%;
+    }
+}
+
+.card-link {
+    text-decoration: none;
+}
+
+.card-img-overlay {
+    opacity: 0;
+}
+
+.card-img-overlay:hover {
+    background-color: white;
+    opacity: 0.3;
+}
+
+.add-btn {
+    background-color: #fc3a44;
+    border: none;
+}
