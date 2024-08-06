@@ -59,13 +59,15 @@
                 <!-- Review submit button  -->
                 <button class="btn btn-outline-dark">Submit</button>
             </form>
-            <hr>
             <% } %>
+            <hr>
             <!-- Display Review -->
             
             <div class="row">
+                <%if(listing.reviews.length){%>
+                    <p class="mb-3"><b>All Reviews</b></p>
+                    <%}%>
                 <% for (review of listing.reviews) { %>
-                <p class="mb-3"><b>All Reviews</b></p>
                 <div class="col-12 col-md-6 mb-3">
                     <div class="card review-card">
                         <div class="card-body">
@@ -75,15 +77,20 @@
                             <!-- <div class="card-rating">
                                 <p class="card-text"> stars</p>
                             </div> -->
+                            
+                            <%if(currentUser && currentUser.username == review.author.username){%>
                             <form action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
                                 <button class="btn btn-dark mt-2">Delete</button>
                             </form>
+                            <%}%>
                         </div>
                     </div>
                 </div>
 
-                <hr>
                 <% } %>
+                <%if(listing.reviews.length){%>
+                <hr>
+                <%}%>
             </div>
         </div>
         <!-- MAP  -->
